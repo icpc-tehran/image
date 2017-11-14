@@ -2,7 +2,7 @@
 
 apt-get install squashfs-tools genisoimage
 mkdir mnt
-mount -o loop ./ubuntu.iso mnt
+mount -o loop ./ubuntu-16.04.3-desktop-amd64.iso mnt
 mkdir extract
 rsync --exclude=/casper/filesystem.squashfs -a mnt/ extract
 unsquashfs mnt/casper/filesystem.squashfs

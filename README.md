@@ -7,14 +7,15 @@ the contest image for the ACM ICPC Regional in Tehran, Iran.
 Installation
 ------------
 
-To install the ICPC contest image, follow the instructions below:
+To install the ACM ICPC contest image, follow the instructions below:
 
-  * install Ubuntu 16.04 LTS Desktop on your system
+  * install Ubuntu 16.04.3 LTS Desktop on your system
   * create a user named ``acm``
   * run ``sudo bash install.sh``
 
 Build Live Image
 ----------------
 
-To build a live version of the ICPC contest image,
-run ``build.sh`` in the ``live`` directory.
+To build a live version of the ACM ICPC contest image,
+put ``ubuntu-16.04.3-desktop-amd64.iso`` in the ``live``
+directory then run ``build.sh`` in there.
