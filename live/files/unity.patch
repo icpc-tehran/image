@@ -8,6 +8,7 @@
 -        'application://org.gnome.Software.desktop',
 -        'application://ubuntu-amazon-default.desktop',
          'application://unity-control-center.desktop',
++        'application://gnome-terminal.desktop',
          'unity://running-apps',
 -        'unity://expo-icon',
 -        'unity://devices'

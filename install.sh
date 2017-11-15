@@ -114,6 +114,9 @@ dpkg -i sublime-text_build-3126_amd64.deb
 wget http://ioi2017.org/files/htc/C++.sublime-package
 mv C++.sublime-package /opt/sublime_text/Packages
 
+# Atom
+apm install atom-beautify autocomplete-python autocomplete-java language-cpp14
+
 chmod +x /opt/*.sh
 
 # ----- Create desktop entries -----
@@ -138,6 +141,17 @@ Name=Python 2.7 Documentation
 Comment=Python 2.7 Documentation
 Icon=firefox
 Exec=firefox /usr/share/doc/python2.7/html/index.html
+Terminal=false
+Categories=Documentation;Python2.7;
+EOF
+
+cat << EOF > pypy-doc.desktop
+[Desktop Entry]
+Type=Application
+Name=PyPy 2.7 Documentation
+Comment=PyPy 2.7 Documentation
+Icon=firefox
+Exec=firefox /usr/share/doc/pypy-doc/html/index.html
 Terminal=false
 Categories=Documentation;Python2.7;
 EOF
@@ -195,13 +209,13 @@ chown $USER "$HOME/Desktop/Utils"
 chown $USER "$HOME/Desktop/Docs"
 
 # Copy Editors and IDEs
-for i in gedit codeblocks emacs24 geany org.kde.kate sublime_text eclipse code vim gvim intellij-idea-community
+for i in gedit codeblocks emacs24 geany org.kde.kate sublime_text eclipse code vim gvim intellij-idea-community idle-python2.7 idle-python3.5 pycharm atom netbeans
 do
     cp "$i.desktop" "$HOME/Desktop/Editors & IDEs"
 done
 
 # Copy Docs
-for i in cpp-doc stl-manual java-doc python2.7-doc python3.5-doc
+for i in cpp-doc stl-manual java-doc python2.7-doc python3.5-doc pypy-doc
 do
     cp "$i.desktop" "$HOME/Desktop/Docs"
 done
