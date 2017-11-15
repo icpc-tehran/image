@@ -116,8 +116,6 @@ mv C++.sublime-package /opt/sublime_text/Packages
 # Atom
 apm install atom-beautify autocomplete-python autocomplete-java language-cpp14
 
-chmod +x /opt/*.sh
-
 # ----- Create desktop entries -----
 
 cd /usr/share/applications/
