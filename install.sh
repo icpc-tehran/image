@@ -156,7 +156,7 @@ EOF
 cat << EOF > eclipse.desktop
 [Desktop Entry]
 Type=Application
-Name=Eclipse Neon
+Name=Eclipse Oxygen
 Comment=Eclipse Integrated Development Environment
 Icon=/opt/eclipse-4.7/icon.xpm
 Exec=eclipse
