@@ -235,5 +235,5 @@ then
     cp live/files/wallpaper.png /opt/wallpaper.png
 fi
 xvfb-run gsettings set org.gnome.desktop.background primary-color "#000000000000"
-xvfb-run gsettings set org.gnome.desktop.background picture-options "centered"
+xvfb-run gsettings set org.gnome.desktop.background picture-options "spanned"
 xvfb-run gsettings set org.gnome.desktop.background picture-uri "file:///opt/wallpaper.png"
