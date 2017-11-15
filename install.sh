@@ -103,8 +103,7 @@ org.eclipse.cdt.autotools.feature.group,\
 org.eclipse.linuxtools.valgrind.feature.group,\
 org.eclipse.linuxtools.profiling.feature.group,\
 org.eclipse.remote.core,\
-org.eclipse.remote.feature.group,\
-org.python.pydev.feature.feature.group
+org.eclipse.remote.feature.group
 ln -s /opt/eclipse-4.7/eclipse /usr/bin/eclipse
 
 # Sublime Text 3

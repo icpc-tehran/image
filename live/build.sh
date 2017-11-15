@@ -1,6 +1,6 @@
 #!/bin/sh
 
-apt-get install squashfs-tools genisoimage
+apt-get install -y squashfs-tools genisoimage
 mkdir mnt
 mount -o loop ./ubuntu-16.04.3-desktop-amd64.iso mnt
 mkdir extract
