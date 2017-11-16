@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Bash script for building the ACM ICPC contest image
-# Version: 0.9
+# Version: 1.0
 
 set -xe
 
