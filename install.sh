@@ -62,7 +62,7 @@ apt-get -y install python2.7 python3.5 ruby pypy
 apt-get -y install stl-manual openjdk-8-doc python2.7-doc python3.5-doc pypy-doc
 
 # Other Software
-apt-get -y install firefox konsole mc
+apt-get -y install firefox konsole mc goldendict
 
 
 # ----- Install software not found in Ubuntu repositories -----
@@ -109,9 +109,6 @@ ln -s /opt/eclipse-4.7/eclipse /usr/bin/eclipse
 # Sublime Text 3
 wget https://download.sublimetext.com/sublime-text_build-3126_amd64.deb
 dpkg -i sublime-text_build-3126_amd64.deb
-# Update C++ build command
-wget http://ioi2017.org/files/htc/C++.sublime-package
-mv C++.sublime-package /opt/sublime_text/Packages
 
 # Atom
 apm install atom-beautify autocomplete-python autocomplete-java language-cpp14
@@ -218,7 +215,7 @@ do
 done
 
 # Copy Utils
-for i in ddd gnome-calculator gnome-terminal mc org.kde.konsole visualvm
+for i in ddd gnome-calculator gnome-terminal mc org.kde.konsole visualvm goldendict
 do
     cp "$i.desktop" "$HOME/Desktop/Utils"
 done
@@ -233,6 +230,9 @@ apt-get install -y xvfb
 if [ -z $LIVE_BUILD ]
 then
     cp live/files/wallpaper.png /opt/wallpaper.png
+    cp live/files/C++.sublime-package /opt/sublime_text/Packages
+    mkdir -p /usr/share/dictd
+    cp live/files/dicts/* /usr/share/dictd
 fi
 xvfb-run gsettings set org.gnome.desktop.background primary-color "#000000000000"
 xvfb-run gsettings set org.gnome.desktop.background picture-options "spanned"
