@@ -46,7 +46,7 @@ apt-get -y install gcc-5 g++-5 openjdk-8-jdk openjdk-8-source
 
 # Editors and IDEs
 apt-get -y install codeblocks codeblocks-contrib emacs geany geany-plugins netbeans
-apt-get -y install gedit vim-gnome vim kate nano
+apt-get -y install gedit vim-gnome vim kate kdevelop nano
 apt-get -y install intellij-idea-community
 apt-get -y install pycharm
 apt-get -y install atom
@@ -206,7 +206,7 @@ chown $USER "$HOME/Desktop/Utils"
 chown $USER "$HOME/Desktop/Docs"
 
 # Copy Editors and IDEs
-for i in gedit codeblocks emacs24 geany org.kde.kate sublime_text eclipse code vim gvim intellij-idea-community idle-python2.7 idle-python3.5 pycharm atom netbeans
+for i in gedit codeblocks emacs24 geany org.kde.kate sublime_text eclipse code vim gvim kde4/kdevelop intellij-idea-community idle-python2.7 idle-python3.5 pycharm atom netbeans
 do
     cp "$i.desktop" "$HOME/Desktop/Editors & IDEs"
 done
