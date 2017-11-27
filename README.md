@@ -10,7 +10,7 @@ Installation
 To install the ACM ICPC contest image, follow the instructions below:
 
   * install Ubuntu 16.04.3 LTS Desktop on your system
-  * create a user named ``acm``
+  * create a user named ``icpc``
   * run ``sudo bash install.sh``
 
 Build Live Image

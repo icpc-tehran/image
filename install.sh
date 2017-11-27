@@ -7,7 +7,7 @@ set -xe
 
 if [ -z $LIVE_BUILD ]
 then
-    export USER=acm
+    export USER=icpc
     export HOME=/home/$USER
 else
     export USER=root
@@ -26,6 +26,7 @@ EOF
 
 # Add missing repositories
 add-apt-repository -y ppa:damien-moore/codeblocks-stable
+add-apt-repository -y ppa:vajdics/netbeans-installer
 apt-add-repository -y ppa:mmk2410/intellij-idea
 add-apt-repository -y ppa:webupd8team/atom
 echo "deb http://archive.getdeb.net/ubuntu $(lsb_release -sc)-getdeb apps" >> /etc/apt/sources.list.d/getdeb.list
@@ -45,7 +46,7 @@ apt-get -y upgrade
 apt-get -y install gcc-5 g++-5 openjdk-8-jdk openjdk-8-source
 
 # Editors and IDEs
-apt-get -y install codeblocks codeblocks-contrib emacs geany geany-plugins netbeans
+apt-get -y install codeblocks codeblocks-contrib emacs geany geany-plugins netbeans-installer
 apt-get -y install gedit vim-gnome vim kate kdevelop nano
 apt-get -y install intellij-idea-community
 apt-get -y install pycharm
@@ -89,6 +90,8 @@ su $USER -c "HOME=$HOME code --user-data-dir=$HOME/.config/Code/ --install-exten
 wget http://eclipse.mirror.rafal.ca/technology/epp/downloads/release/oxygen/R/eclipse-java-oxygen-R-linux-gtk-x86_64.tar.gz
 tar xzvf eclipse-java-oxygen-R-linux-gtk-x86_64.tar.gz -C /opt/
 mv /opt/eclipse /opt/eclipse-4.7
+wget -O pydev.zip https://sourceforge.net/projects/pydev/files/pydev/PyDev%205.8.0/PyDev%205.8.0.zip/download
+unzip pydev.zip -d /opt/eclipse-4.7/dropins
 /opt/eclipse-4.7/eclipse -application org.eclipse.equinox.p2.director -noSplash -repository http://download.eclipse.org/releases/oxygen \
 -installIUs \
 org.eclipse.cdt.feature.group,\
