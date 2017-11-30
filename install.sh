@@ -39,7 +39,7 @@ apt-get -y update
 apt-get -y autoremove --purge libreoffice\* thunderbird example-content gimp inkscape shotwell webbrowser-app simple-scan vino vinagre remmina transmission\* evolution gnome-calendar gnome-contacts brasero cheese rhythmbox totem
 
 # Replace unity with gnome
-apt-get -y autoremove unity
+apt-get -y autoremove --purge unity
 apt-get -y install gnome-session-flashback
 su $USER -c "echo -e '[Desktop]\nSession=gnome-flashback-metacity' > $HOME/.dmrc"
 
