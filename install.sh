@@ -67,7 +67,7 @@ apt-get -y install ddd libappindicator1 libindicator7 libvte9 valgrind visualvm
 apt-get -y install python2.7 python3.5 ruby pypy
 
 # Documentation
-apt-get -y install stl-manual openjdk-8-doc python2.7-doc python3.5-doc pypy-doc
+apt-get -y install stl-manual openjdk-8-doc python2.7-doc python3.5-doc
 
 # Other Software
 apt-get -y install firefox konsole mc goldendict
@@ -149,17 +149,6 @@ Terminal=false
 Categories=Documentation;Python2.7;
 EOF
 
-cat << EOF > pypy-doc.desktop
-[Desktop Entry]
-Type=Application
-Name=PyPy 2.7 Documentation
-Comment=PyPy 2.7 Documentation
-Icon=firefox
-Exec=firefox /usr/share/doc/pypy-doc/html/index.html
-Terminal=false
-Categories=Documentation;Python2.7;
-EOF
-
 cat << EOF > eclipse.desktop
 [Desktop Entry]
 Type=Application
@@ -219,7 +208,7 @@ do
 done
 
 # Copy Docs
-for i in cpp-doc stl-manual java-doc python2.7-doc python3.5-doc pypy-doc
+for i in cpp-doc stl-manual java-doc python2.7-doc python3.5-doc
 do
     cp "$i.desktop" "$HOME/Desktop/Docs"
 done
