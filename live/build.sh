@@ -3,7 +3,7 @@
 YEAR='2017'
 VERSION='1.1'
 
-apt-get install -y squashfs-tools genisoimage syslinux-utils
+apt-get install -y squashfs-tools xorriso isolinux
 mkdir mnt
 mount -o loop ./ubuntu-16.04.3-desktop-amd64.iso mnt
 mkdir extract
@@ -37,6 +37,5 @@ printf $(sudo du -sx --block-size=1 edit | cut -f1) | sudo tee extract/casper/fi
 cd extract
 rm md5sum.txt
 find -type f -print0 | sudo xargs -0 md5sum | grep -v isolinux/boot.cat | sudo tee md5sum.txt
-genisoimage -D -r -V "ACM ICPC $YEAR" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o ../acm-icpc-$YEAR-v$VERSION.iso .
-isohybrid ../acm-icpc-$YEAR-v$VERSION.iso
+xorriso -as mkisofs -D -r -J -l -V "ACM ICPC $YEAR" -cache-inodes -no-emul-boot -boot-load-size 4 -boot-info-table -iso-level 4 -b isolinux/isolinux.bin -c isolinux/boot.cat -eltorito-alt-boot -e boot/grub/efi.img -no-emul-boot -isohybrid-mbr /usr/lib/ISOLINUX/isohdpfx.bin -isohybrid-gpt-basdat -o ../acm-icpc-$YEAR-v$VERSION.iso .
 
