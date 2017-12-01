@@ -245,5 +245,5 @@ then
     cp live/files/dicts/* /usr/share/dictd
 fi
 xvfb-run gsettings set org.gnome.desktop.background primary-color "#000000000000"
-xvfb-run gsettings set org.gnome.desktop.background picture-options "spanned"
+xvfb-run gsettings set org.gnome.desktop.background picture-options "scaled"
 xvfb-run gsettings set org.gnome.desktop.background picture-uri "file:///opt/wallpaper.png"
