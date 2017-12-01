@@ -1,6 +1,9 @@
 #!/bin/sh
 
-apt-get install -y squashfs-tools genisoimage
+YEAR='2017'
+VERSION='1.1'
+
+apt-get install -y squashfs-tools genisoimage syslinux-utils
 mkdir mnt
 mount -o loop ./ubuntu-16.04.3-desktop-amd64.iso mnt
 mkdir extract
@@ -34,5 +37,6 @@ printf $(sudo du -sx --block-size=1 edit | cut -f1) | sudo tee extract/casper/fi
 cd extract
 rm md5sum.txt
 find -type f -print0 | sudo xargs -0 md5sum | grep -v isolinux/boot.cat | sudo tee md5sum.txt
-genisoimage -D -r -V "$IMAGE_NAME" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o ../ubuntu-acm-icpc-2017-v1.1.iso .
+genisoimage -D -r -V "ACM ICPC $YEAR" -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o ../acm-icpc-$YEAR-v$VERSION.iso .
+isohybrid ../acm-icpc-$YEAR-v$VERSION.iso
 
