@@ -3,7 +3,7 @@
 YEAR='2017'
 VERSION='1.1'
 
-apt-get install -y squashfs-tools xorriso isolinux syslinux-utils
+apt-get install -y squashfs-tools xorriso isolinux syslinux-utils sudo rsync
 mkdir mnt
 mount -o loop ./ubuntu-16.04.3-desktop-amd64.iso mnt
 mkdir extract
