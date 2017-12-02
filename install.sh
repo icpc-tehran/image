@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Bash script for building the ACM ICPC contest image
-# Version: 1.0
+# Version: 1.1
 
 set -xe
 
@@ -42,6 +42,7 @@ apt-get -y autoremove --purge libreoffice\* thunderbird example-content gimp ink
 apt-get -y autoremove --purge unity
 apt-get -y install gnome-session-flashback
 su $USER -c "echo -e '[Desktop]\nSession=gnome-flashback-metacity' > $HOME/.dmrc"
+sed -i 's/ubuntu/gnome-flashback-metacity/' /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf
 
 # Upgrade everything if needed
 apt-get -y upgrade
