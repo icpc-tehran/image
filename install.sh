@@ -27,10 +27,8 @@ EOF
 # Add missing repositories
 add-apt-repository -y ppa:damien-moore/codeblocks-stable
 add-apt-repository -y ppa:vajdics/netbeans-installer
-apt-add-repository -y ppa:mmk2410/intellij-idea
+add-apt-repository ppa:jonas-groeger/jetbrains
 add-apt-repository -y ppa:webupd8team/atom
-echo "deb http://archive.getdeb.net/ubuntu $(lsb_release -sc)-getdeb apps" >> /etc/apt/sources.list.d/getdeb.list
-wget -q -O - http://archive.getdeb.net/getdeb-archive.key | apt-key add -
 
 # Update packages list
 apt-get -y update
@@ -57,7 +55,8 @@ apt-get -y install gcc-5 g++-5 openjdk-8-jdk openjdk-8-source
 apt-get -y install codeblocks codeblocks-contrib emacs geany geany-plugins netbeans-installer
 apt-get -y install gedit vim-gnome vim kate kdevelop nano
 apt-get -y install intellij-idea-community
-apt-get -y install pycharm
+apt-get -y install pycharm-community
+apt-get -y install clion
 apt-get -y install atom
 apt-get -y install idle-python2.7 idle-python3.5
 
@@ -203,7 +202,7 @@ chown $USER "$HOME/Desktop/Utils"
 chown $USER "$HOME/Desktop/Docs"
 
 # Copy Editors and IDEs
-for i in gedit codeblocks emacs24 geany org.kde.kate sublime_text eclipse code vim gvim kde4/kdevelop intellij-idea-community idle-python2.7 idle-python3.5 pycharm atom netbeans
+for i in gedit codeblocks emacs24 geany org.kde.kate sublime_text eclipse code vim gvim kde4/kdevelop intellij-idea-community idle-python2.7 idle-python3.5 pycharm-community clion atom netbeans
 do
     cp "$i.desktop" "$HOME/Desktop/Editors & IDEs"
 done
