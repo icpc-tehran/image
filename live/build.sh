@@ -1,11 +1,11 @@
 #!/bin/sh
 
-YEAR='2017'
-VERSION='1.1'
+YEAR='2018'
+VERSION='1.4'
 
 apt-get install -y squashfs-tools xorriso isolinux syslinux-utils sudo rsync
 mkdir mnt
-mount -o loop ./ubuntu-16.04.3-desktop-amd64.iso mnt
+mount -o loop ./ubuntu-18.04.1-desktop-amd64.iso mnt
 mkdir extract
 rsync --exclude=/casper/filesystem.squashfs -a mnt/ extract
 unsquashfs mnt/casper/filesystem.squashfs
@@ -22,7 +22,6 @@ chroot edit /bin/bash /files/setup.sh
 rm -rf edit/files
 
 umount edit/dev
-
 
 # Assemble ISO file
 
