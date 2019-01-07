@@ -11,7 +11,7 @@ For an isolated image building process:
 
   * install docker
   * go to `live` folder
-  * make docker-run
+  * run `make docker-run`
 
 Build Live Image Without Docker
 ------------------------------
